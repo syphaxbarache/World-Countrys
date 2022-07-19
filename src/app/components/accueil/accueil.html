@@ -1,0 +1,21 @@
+<div class="input-container">
+    <input class="input-range" #input type="range" min="1" max="250" [defaultValue]="rangeValue" (change)="changeInputRange(input)">
+    <div class="input-radios">
+        <label for="All"><input #inputAll type="radio" id="All" value="All" name="radio" checked (change)="changeInputRadio(inputAll)">All</label>
+        <label for="Africa"><input #inputafrica type="radio" id="Africa" value="Africa" name="radio" (change)="changeInputRadio(inputafrica)">Africa</label>
+        <label for="America"><input #inputramerica type="radio" id="America" value="Americas" name="radio" (change)="changeInputRadio(inputramerica)">America</label>
+        <label for="Asia"><input #inputasia type="radio" id="Asia" value="Asia" name="radio" (change)="changeInputRadio(inputasia)">Asia</label>
+        <label for="Europe"><input #inputeurope type="radio" id="Europe" value="Europe" name="radio" (change)="changeInputRadio(inputeurope)">Europe</label>
+        <label for="Oceania"><input #inputoceania type="radio" id="Oceania" value="Oceania" name="radio" (change)="changeInputRadio(inputoceania)">Oceania</label>
+    </div>
+</div>
+    <ul class="cards">
+       <li class="card" *ngFor="let country of countrysArray">
+            <img [src]=country.flags.svg  [alt]=country.translations.fra.common>
+            <div class="infos">
+                <h2>{{country.translations.fra.common}}</h2>
+                <h4>{{country.capital}}</h4>
+                <p>Pop. {{country.population}}</p>
+              </div>
+       </li>
+    </ul>
